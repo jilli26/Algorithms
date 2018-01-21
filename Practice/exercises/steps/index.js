@@ -18,7 +18,7 @@
 //       '####'
 
 function steps(n) {
-  console.log(n * "#");
+  // console.log(n * "#");
   debugger
 }
 
