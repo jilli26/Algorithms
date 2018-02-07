@@ -9,7 +9,7 @@
 
 function findPrime(n) {
   if (n < 2) {
-    return false 
+    return false
   }
 
   //go through all numbers from 2 to n
@@ -28,3 +28,16 @@ for (let i = 0; i < 100; i++) {
     console.log(i)
   }
 }
+
+//Find the sum of an array 
+function aVeryBigSum(n, ar) {
+  let sum = 0
+
+  for (let i = 0; i < n; i++) {
+    sum += ar[i]
+  }
+
+  return sum
+}
+
+aVeryBigSum(5, [1,1,1,1,6])
