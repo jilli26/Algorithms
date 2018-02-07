@@ -29,7 +29,7 @@ for (let i = 0; i < 100; i++) {
   }
 }
 
-//Find the sum of an array 
+//Find the sum of an array
 function aVeryBigSum(n, ar) {
   let sum = 0
 
@@ -41,3 +41,17 @@ function aVeryBigSum(n, ar) {
 }
 
 aVeryBigSum(5, [1,1,1,1,6])
+
+
+//HackerRank - Colleen is having a birthday! She will have a cake with one candle for each year of her age. When she blows out the candles, she’ll only be able to blow out the tallest ones. Find and print the number of candles she can successfully blow out.
+
+function findMax(n, ar) {
+  //find the max in the array and set as a variable
+  const max = Math.max(...ar)
+
+  //use filter to get only the elements in the array that equal the max value
+  return ar.filter(x => x === max).length
+
+}
+
+findMax(4, [3, 1, 2, 3])
