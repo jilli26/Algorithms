@@ -95,7 +95,7 @@ function anagrams(a,b) {
   let hashB = {}
 
   if (copyA.split('').sort() !== copyB.split('').sort()) {
-    //do a hashmap for a 
+    //do a hashmap for a
     for (let i = 0; i < copyA.length; i++) {
     console.log(copyA[i])
       if (hashA[copyA[i]]) {
@@ -136,3 +136,23 @@ function anagrams(a,b) {
 }
 
 anagrams('cba', 'edc')
+
+
+//A left rotation operation on an array of size  shifts each of the array's elements  unit to the left. For example, if left rotations are performed on array [1,2,3,4,5], then the array would become [3,4,5,1,2].
+//Given an array of  integers and a number, , perform  left rotations on the array. Then print the updated array as a single line of space-separated integers.
+
+function leftRotation(a, d) {
+  //first make a copy of the array so we aren't working on the original
+  let copy = a.slice(0)
+  let counter = 0
+  //use shift to remove the first element from the array (a) and push it to the end of the array
+  while (counter < d) {
+    //shift and then push
+    let firstElement = copy.shift()
+    copy.push(firstElement)
+    counter++
+  }
+  return copy
+}
+
+leftRotation([1,2,3,4,5], 4)
