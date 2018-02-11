@@ -160,7 +160,7 @@ leftRotation([1,2,3,4,5], 4)
 
 
 
-//time in words 
+//time in words
 function timeInWords(h, m) {
   const hours = {
     1: 'one',
@@ -231,3 +231,30 @@ function timeInWords(h, m) {
 }
 
 timeInWords(5, 47)
+
+
+
+
+string with repetition of same word, find the errors
+
+function findErrors(string) {
+  const copy = string.slice(0)
+  let newArray = []
+  let getIndexes = []
+
+  let array = copy.split(' ')
+  console.log(array)
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] !== 'word') {
+      newArray.push(array[i])
+    }
+  }
+  return newArray
+}
+
+function findErrors(string) {
+  return string.toLowerCase().split(' ').filter(word => word !== 'word')
+}
+
+findErrors('Word word word Wrod word wrkd')
