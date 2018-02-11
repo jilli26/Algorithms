@@ -85,3 +85,54 @@ function ransom(magazine, ransom) {
 }
 
 ransom('give me one grand today night', 'give one grand today')
+
+//anagrams Print a single integer denoting the number of characters you must delete to make the two strings anagrams of each other.
+
+function anagrams(a,b) {
+  let copyA = a.slice(0)
+  let copyB = b.slice(0)
+  let hashA = {}
+  let hashB = {}
+
+  if (copyA.split('').sort() !== copyB.split('').sort()) {
+    //do a hashmap for a 
+    for (let i = 0; i < copyA.length; i++) {
+    console.log(copyA[i])
+      if (hashA[copyA[i]]) {
+        hashA[copyA[i]]++
+      } else {
+        hashA[copyA[i]] = 1
+      }
+    }
+
+    //hashmap for b
+    for (let i = 0; i < copyB.length; i++) {
+    console.log(copyB[i])
+      if (hashB[copyB[i]]) {
+        hashB[copyB[i]]++
+      } else {
+        hashB[copyB[i]] = 1
+      }
+    }
+
+    //see which keys don't match up
+    if (hashA !== hashB) {
+      //
+      for (let key in hashA) {
+        for (let another in hashB) {
+          if () {
+            hashA[key] = 0
+            hashB[another] = 0
+          }
+        }
+      }
+
+    }
+  }
+
+
+  console.log(hashA)
+  console.log(hashB)
+}
+
+anagrams('cba', 'edc')
