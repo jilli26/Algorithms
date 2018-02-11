@@ -55,3 +55,33 @@ function findMax(n, ar) {
 }
 
 findMax(4, [3, 1, 2, 3])
+
+//ransom note
+function ransom(magazine, ransom) {
+  //make a hash map out of the magazine words
+  magHash = {}
+  let magazineWords = magazine.split(' ')
+  let ransomWords = ransom.split(' ')
+
+  for (let i = 0; i < magazineWords.length; i++) {
+    if (magHash[magazineWords[i]]) {
+      magHash[magazineWords[i]]++
+    } else {
+      magHash[magazineWords[i]] = 1
+    }
+  }
+
+  //now we need to iterate through ransom and see if all the words in ransom are in magazine and then delete them
+  let result = 'yes'
+  for (let r = 0; r < ransomWords.length; r++) {
+    if (magHash[ransomWords[r]] && magHash[ransomWords[r]] > 0) {
+      magHash[ransomWords[r]]--
+    } else {
+      result = 'no'
+    }
+  }
+
+  console.log(magHash)
+}
+
+ransom('give me one grand today night', 'give one grand today')
