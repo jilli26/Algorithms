@@ -235,7 +235,7 @@ timeInWords(5, 47)
 
 
 
-string with repetition of same word, find the errors
+// string with repetition of same word, find the errors
 
 function findErrors(string) {
   const copy = string.slice(0)
@@ -258,3 +258,59 @@ function findErrors(string) {
 }
 
 findErrors('Word word word Wrod word wrkd')
+
+
+
+
+
+
+//palindrome
+
+function palindrome(array) {
+
+  let yes = []
+
+  for (let i = 0; i < array.length; i++) {
+    //filter words where the reversed version of this word === word
+    if (array[i].split(' ').reverse().toLowerCase().join() === array[i]) {
+      yes.push(array[i])
+    }
+  }
+
+  return yes
+}
+
+function palindrome(array) {
+  // console.log(array.reverse())
+  let newArr = []
+  let yes = []
+
+  for (let i = 0; i < array.length; i++) {
+    newArr.push(array[i].toLowerCase())
+    if (newArr[i].split('').reverse().join('') === array[i].toLowerCase()) {
+      yes.push(array[i])
+    }
+  }
+
+  return yes
+
+}
+
+function palindrome(array) {
+  let yes = []
+
+  for (let i = 0; i < array.length; i++) {
+    // console.log(array[i].toLowerCase().split('').reverse().join(''))
+    // console.log(array[i].toLowerCase())
+
+    //if it's the same backwards as it is forwards then push it in to yes
+    if (array[i].toLowerCase() === array[i].toLowerCase().split('').reverse().join('')) {
+      yes.push(array[i])
+
+    }
+
+  }
+  return yes
+}
+
+palindrome(['Racecar', 'change', 'madam', 'test'])
